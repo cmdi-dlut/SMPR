@@ -19,3 +19,7 @@ python setup.py build_ext install
 pip install Pillow==6.2.2
 
 pip install -v -e .
+
+## Acknowledgment
+
+We would like to thank MMDetection team for producing this great object detection toolbox!
