@@ -2,6 +2,22 @@
 
 Code repository for the paper [SMPR: Single-Stage Multi-Person Pose Regression](https://arxiv.org/abs/2006.15576), by Junqi Lin, Huixin Miao, Junjie Cao, Zhixun Su and Risheng Liu.
 
+![vis1](figs/1.jpg)
+
+![vis2](figs/2.jpg)
+
+## Results
+
+Results on COCO test-dev.
+
+
+Backbone | mAP | AP^{50} | AP^{75} | AP^{M} | AP^{L}
+--- | --- | --- | ---| --- | ---
+ResNet50 | 62.6 |85.9 | 68.6 | 56.1 | 71.7
+ResNet50 (multi-testing) | 65.3 | 87.9 | 72.1 | 59.8 | 73.3
+HRNet-w32 | 68.2 | 88.7 | 75.3 | 63.3 | 75.4
+HRNet-w32 (multi-testing) | 70.2 | 89.7 | 77.5 | 65.9 | 77.2
+
 ## Getting Started
 
 conda create -n mmdet python=3.7
@@ -22,7 +38,26 @@ python setup.py build_ext install
 
 pip install -r requirements.txt
 
+pip install Pillow==6.2.2
+
 pip install -v -e .
+
+## Data preprocessing 
+
+put train2017 and val2017 in data/coco
+
+put person_keypoints_train2017.json and person_keypoints_val2017.json in data/coco/annotations
+
+cd data/coco/annotations
+
+% generate 'person_keypoints_train2017_pesudobox.json'
+
+python pesudo_box_train.py
+
+% generate 'person_keypoints_val2017_pesudobox.json'
+
+python pesudo_box_val.py
+
 
 ## Pretrained Models
 
@@ -40,3 +75,6 @@ You can now evaluate the models on the COCO val2017 split:
 
 We would like to thank MMDetection team for producing this great object detection toolbox!
 
+## License
+
+This project is released under the [Apache 2.0 license](LICENSE).
