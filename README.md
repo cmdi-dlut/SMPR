@@ -71,6 +71,15 @@ You can now evaluate the models on the COCO val2017 split:
 ./tools/dist_test.sh configs/SMPR/ResNet_50.py work_dirs/r50.pth 4 --eval keypoints --options "jsonfile_prefix=./work_dirs/r50"
 ```
 
+## Citation
+
+@misc{SMPR2020,
+Author = {Junqi Lin and Huixin Miao and Junjie Cao and Zhixun Su and Risheng Liu},
+Title = {SMPR: Single-Stage Multi-Person Pose Regression},
+Year = {2020},
+Eprint = {arXiv:2006.15576},
+}
+
 ## Acknowledgment
 
 We would like to thank MMDetection team for producing this great object detection toolbox!
