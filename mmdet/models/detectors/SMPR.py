@@ -7,7 +7,7 @@ from .single_stage_kpt import SingleStageDetector_kpt
 
 
 @DETECTORS.register_module
-class FCOS_kpt(SingleStageDetector_kpt):
+class SMPR(SingleStageDetector_kpt):
 
     def __init__(self,
                  backbone,
@@ -16,7 +16,7 @@ class FCOS_kpt(SingleStageDetector_kpt):
                  train_cfg=None,
                  test_cfg=None,
                  pretrained=None):
-        super(FCOS_kpt, self).__init__(backbone, neck, bbox_head, train_cfg,
+        super(SMPR, self).__init__(backbone, neck, bbox_head, train_cfg,
                                    test_cfg, pretrained)
 
     def merge_aug_results(self, aug_bboxes, aug_kpts, aug_scores, aug_rescores, img_metas):
