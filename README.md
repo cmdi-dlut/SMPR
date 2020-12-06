@@ -20,7 +20,7 @@ python setup.py build_ext --inplace
 
 python setup.py build_ext install
 
-pip install Pillow==6.2.2
+pip install -r requirements.txt
 
 pip install -v -e .
 
